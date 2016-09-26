@@ -1,0 +1,53 @@
+<idea-plugin version="2">
+    <id>com.rick.aici.skyapp.plugin.id</id>
+    <name>SkyApp</name>
+    <version>1.0</version>
+    <vendor email="anshu.wang.work@gmail.com" url="http://rickgit.github.com">aicai</vendor>
+
+    <description><![CDATA[
+      project窗口的操作.<br>
+      <em>文件md5码</em>，<em>拷贝插件</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="141.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here icon="/icons/icon.png" -->
+        <group id="MyPlugin.SampleMenu" text="_Sample Menu" description="Sample menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="Myplugin.Textboxes" class="com.woqutz.plugin.Plugin" text="Text _Boxes"
+                    description="A test menu item"/>
+        </group>
+
+
+        <action id="fileplugin.info" class="com.woqutz.plugin.Check" text="显示文件信息">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last" />
+        </action>
+        <action id="fileplugin.copy" class="com.woqutz.plugin.Copy" text="拷贝插件到">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last" />
+        </action>
+    </actions>
+
+    <application-components>
+        <component>
+            <implementation-class>com.woqutz.plugin.MyComponet</implementation-class>
+        </component>
+    </application-components>
+</idea-plugin>
